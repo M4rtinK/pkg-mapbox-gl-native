@@ -14,7 +14,7 @@ QT += network \
 # QMAKE_LINK=/opt/gcc6/bin/g++
 
 QMAKE_CXXFLAGS += \
-    -DNDEBUG \
+    -g \
     -DQT_IMAGE_DECODERS \
     -DRAPIDJSON_HAS_STDSTRING=1 \
     -D__QT__ \
