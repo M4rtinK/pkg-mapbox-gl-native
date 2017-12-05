@@ -1,9 +1,8 @@
 TARGET = qmapboxgl
 TEMPLATE = lib
 
-CONFIG += qt c++14 exceptions warn_off
-CONFIG += staticlib
-CONFIG += use_opengles2 use_system-zlib
+CONFIG += qt c++14 exceptions warn_off staticlib object_parallel_to_source
+CONFIG += use_system-zlib
 
 QT += network \
       gui \
@@ -17,6 +16,7 @@ QMAKE_CXXFLAGS += \
     -DNDEBUG \
     -DQT_IMAGE_DECODERS \
     -DRAPIDJSON_HAS_STDSTRING=1 \
+    -DMBGL_USE_GLES2 \
     -D__QT__ \
     -O3 \
     -ftemplate-depth=1024 \
@@ -48,11 +48,6 @@ win32:qtConfig(dynamicgl) {
     QMAKE_CXXFLAGS += \
         -DMBGL_USE_GLES2 \
         -DQT_OPENGL_ES_2
-}
-
-use_opengles2 {
-    QMAKE_CXXFLAGS += \
-        -DMBGL_USE_GLES2
 }
 
 use_system-zlib {
