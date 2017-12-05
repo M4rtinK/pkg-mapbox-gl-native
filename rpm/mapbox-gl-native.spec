@@ -1,6 +1,6 @@
 Summary: Mapbox GL Native Qt version
 Name: qmapboxgl
-Version: 1.1.0
+Version: 1.2.0
 Release: 1%{?dist}
 License: Open Source
 Group: Libraries/Geosciences
